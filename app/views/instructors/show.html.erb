@@ -1,0 +1,13 @@
+<h1><%=@instructor.name%></h1>
+
+<label>Students</label>
+<ul>
+<% @instructor.students.each do |student|%>
+<li><%= link_to student.name, student_path(student)%></li>
+<%end%>
+</ul> 
+<br>
+<a href="<%=instructors_path%>"><button type="button">Instructors</button></a>
+<a href="<%=edit_instructor_path%>"><button type="button">Edit Instructor</button></a>
+<a href="<%=delete_instructor_path(@instructor)%>"><button type="button">Delete Instructor</button></a>
+
